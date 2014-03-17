@@ -1,0 +1,22 @@
+header
+  nav
+    a(href="/") Home
+    a(href="#") link
+    a(href="#") link
+    a(href="#") link
+  .user
+    if window.user
+      | hi, #{window.user.username}
+      a(href="#") message
+      a(href="#") profile
+      a(href="#") setting
+      if window.user.admin
+        a(href="#") admin
+    else
+      a(href="/login") login
+      | or
+      a(href="/register") register
+
+#contain
+#tip
+  | loading
