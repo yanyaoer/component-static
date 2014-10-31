@@ -1,7 +1,7 @@
 require('zepto')
 B = require('backbone')
+B.$ = $
 M = require('backbone.marionette')
-B.$ = M.$ = $
 
 
 handler = require('./handler')
@@ -18,17 +18,14 @@ router = M.AppRouter.extend
 
 app = new M.Application()
 
-app.on 'initialize:before', ()->
-  $('#wrap').append $(tpl.base())
-
-
-app.on 'initialize:after', ()->
+app.on 'start', ()->
   R = new router()
 
   B.history.start
     pushState: true
     root:'/'
 
+  $('#wrap').append $(tpl.base())
   $(document).on 'click', 'a[href^="/"]', (e)->
     e.preventDefault()
     R.navigate $(e.currentTarget).attr('href').substr(1), {trigger: true}

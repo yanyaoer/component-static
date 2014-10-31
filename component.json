@@ -1,10 +1,10 @@
 {
   "name": "component-static",
   "dependencies": {
-    "yanyaoer/zepto": "*",
-    "jadejs/jade": "*",
-    "jashkenas/backbone": "*",
-    "marionettejs/backbone.marionette": "*"
+    "yanyaoer/zepto": "master",
+    "jadejs/jade": "master",
+    "jashkenas/backbone": "master",
+    "marionettejs/backbone.marionette": "master"
   },
   "main": "source/index.js",
   "scripts": [

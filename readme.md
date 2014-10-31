@@ -27,7 +27,7 @@ install
     cd {{ static_path }}
 
     #2.get static_file only
-    component install yanyaoer/component-static
+    component install yanyaoer/component-static@master
 
     component install
     component build

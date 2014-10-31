@@ -6,9 +6,9 @@
 
   B = require('backbone');
 
-  M = require('backbone.marionette');
+  B.$ = $;
 
-  B.$ = M.$ = $;
+  M = require('backbone.marionette');
 
   handler = require('./handler');
 
@@ -25,17 +25,14 @@
 
   app = new M.Application();
 
-  app.on('initialize:before', function() {
-    return $('#wrap').append($(tpl.base()));
-  });
-
-  app.on('initialize:after', function() {
+  app.on('start', function() {
     var R;
     R = new router();
     B.history.start({
       pushState: true,
       root: '/'
     });
+    $('#wrap').append($(tpl.base()));
     return $(document).on('click', 'a[href^="/"]', function(e) {
       e.preventDefault();
       return R.navigate($(e.currentTarget).attr('href').substr(1), {
