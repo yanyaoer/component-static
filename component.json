@@ -2,7 +2,7 @@
   "name": "component-static",
   "dependencies": {
     "yanyaoer/zepto": "*",
-    "visionmedia/jade": "*",
+    "jadejs/jade": "*",
     "jashkenas/backbone": "*",
     "marionettejs/backbone.marionette": "*"
   },
