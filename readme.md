@@ -4,7 +4,9 @@ example for single-page webapp
 
     ├── component.json      #define package
     ├── example.html
-    ├── readme.md
+    ├── version.coffee      #build example.jade -> example.index
+    ├── example.jade        #tpl example
+    ├── build.sh            #build coffee,stylus,hash static url,uglifyjs
     └── source
         ├── index.css       #main css
         ├── index.js        #main js
@@ -19,7 +21,7 @@ example for single-page webapp
 
 install
 ---
-    npm install component -g
+    npm install -g component coffee-script stylus uglify-js clean-css
 
     #1.build from source
     npm install jade
@@ -30,7 +32,7 @@ install
     component install yanyaoer/component-static@master
 
     component install
-    component build
+    sh build.sh
 
 
 
