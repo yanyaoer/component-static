@@ -1,0 +1,1 @@
+coffee --compile source/ && stylus -c source/index.styl && node source/tpl/builder.js && component build && cleancss --s0 --skip-advanced -o build/build.css build/build.css && uglifyjs build/build.js -o build/build.js && coffee -cp version.coffee | node
